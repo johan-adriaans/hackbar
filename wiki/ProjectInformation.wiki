@@ -6,7 +6,8 @@ Featured#summary Project information
   * Add Oracle menu
   * Add more SQL functionalities
   * Change variables from POST to GET and vice-versa
-
+  * Reverse a string
+  * Useful strings -> generate "A"s string of 128, 512, 1024 and 2048 characters
 
 = Version History =
 ----
