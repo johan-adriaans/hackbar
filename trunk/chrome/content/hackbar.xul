@@ -128,6 +128,17 @@
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.phi;" label="&hackbar.phi;" oncommand="hackBar.getUsefullString( 'phi' )" />
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.loremIpsum;" label="&hackbar.loremIpsum;" oncommand="hackBar.getUsefullString( 'lorem' )" />
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.fibonacci;" label="&hackbar.fibonacci;" oncommand="hackBar.getUsefullString( 'fibonacci' )" />
+                    <!-- Buffer Overflow submenu -->
+                    <menu tooltiptext="&hackbar.bufferOverflowTooltip;" label="&hackbar.bufferOverflowLabel;">
+                      <menupopup>
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow128;" label="&hackbar.Overflow128;" oncommand="hackBar.generateOverflowString( 128 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow512;" label="&hackbar.Overflow512;" oncommand="hackBar.generateOverflowString( 512 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow1024;" label="&hackbar.Overflow1024;" oncommand="hackBar.generateOverflowString( 1024 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow2048;" label="&hackbar.Overflow2048;" oncommand="hackBar.generateOverflowString( 2048 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.OverflowCustom;" label="&hackbar.OverflowCustom;" oncommand="hackBar.generateOverflowString( -1 )" />
+                      </menupopup>
+                    </menu>
+                    <!-- / Buffer Overflow submenu -->
                   </menupopup>
                 </menu>
               </menupopup>

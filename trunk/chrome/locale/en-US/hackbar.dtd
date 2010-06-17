@@ -47,6 +47,13 @@
 <!ENTITY hackbar.phi "PHI">
 <!ENTITY hackbar.loremIpsum "Lorem Ipsum">
 <!ENTITY hackbar.fibonacci "Fibonacci">
+<!ENTITY hackbar.bufferOverflowTooltip "Generate a large 'A's string to try to generate errors">
+<!ENTITY hackbar.bufferOverflowLabel "Buffer overflow">
+<!ENTITY hackbar.Overflow128 "128">
+<!ENTITY hackbar.Overflow512 "512">
+<!ENTITY hackbar.Overflow1024 "1024">
+<!ENTITY hackbar.Overflow2048 "2048">
+<!ENTITY hackbar.OverflowCustom "Custom">
 <!ENTITY hackbar.md5Tooltip "Convert current selection to its MD5 hash">
 <!ENTITY hackbar.md5Label "MD5 Hash">
 <!ENTITY hackbar.MysqlCharTooltip "Convert current selection to MySQL CHAR() characters">

@@ -465,5 +465,24 @@ hackBarObj.prototype = {
   getUsefullString: function ( key )
   {
     this.setSelectedText( this.hackBarUsefullStrings[key] );
+  },
+  
+  // Used by Overflow menu option.
+  // Returns a 'A's string to test overflows and application limits
+  generateOverflowString: function ( stringLength )
+  {
+    var result = "";
+    
+    while(stringLength < 1)
+    {
+      stringLength = prompt("Length?","1337");
+      stringLength = Math.min(4096, parseInt( stringLength ));
+    }
+    
+    for (var i=0; i < stringLength; i++)
+    {
+      result += "A";
+    }
+    this.setSelectedText( result );
   }
 };
