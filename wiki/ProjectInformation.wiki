@@ -1,4 +1,4 @@
-# Project information# Hackbar pr
+# Project information
 
 = Wishlist =
 ----
