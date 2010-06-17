@@ -1,4 +1,4 @@
-# Project information
+#Project information.
 
 = Wishlist =
 ----
