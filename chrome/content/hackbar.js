@@ -278,6 +278,9 @@ hackBarObj.prototype = {
       case "mssql":
         charString = ' CHAR(' + charStringArray.join(') + CHAR(') + ')';
         break;
+      case "oracle":
+        charString = ' CHR(' + charStringArray.join(') || CHR(') + ')';
+        break;
       case "stringFromCharCode":
         charString = 'String.fromCharCode(' + charStringArray.join(', ') + ')';
         break;

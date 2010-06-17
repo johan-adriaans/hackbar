@@ -65,11 +65,20 @@
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.MysqlCharTooltip;" label="&hackbar.MysqlCharLabel;" oncommand="hackBar.selectionToChar( 'mysql' )" accesskey="y" />
               </menupopup>
             </toolbarbutton>
-            <toolbarbutton class="menuitem-iconic" image="chrome://hackbar/skin/mssql.gif" type="menu" tooltiptext="MsSQL injection tools" label="MsSQL">
+            <toolbarbutton class="menuitem-iconic" image="chrome://hackbar/skin/mssql.gif" type="menu" tooltiptext="&hackbar.mssqlMenuTooltip;" label="&hackbar.mssql;">
               <menupopup>
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.MssqlCharTooltip;" label="&hackbar.MssqlCharLabel;" oncommand="hackBar.selectionToChar( 'mssql' )" accesskey="q" />
               </menupopup>
             </toolbarbutton>
+            
+            <!-- Oracle Menu -->
+            <toolbarbutton class="menuitem-iconic" image="chrome://hackbar/skin/oracle.gif" type="menu" tooltiptext="&hackbar.oracleMenuTooltip;" label="&hackbar.oracle;">
+              <menupopup>
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.OracleCharTooltip;" label="&hackbar.OracleCharLabel;" oncommand="hackBar.selectionToChar( 'oracle' )" accesskey="o" />
+              </menupopup>
+            </toolbarbutton>
+            <!-- / Oracle Menu -->
+            
             <toolbarbutton type="menu" tooltiptext="&hackbar.xssMenuTooltip;" label="&hackbar.xssMenuLabel;">
               <menupopup>
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/xss.png" tooltiptext="&hackbar.SFCTooltip;" label="&hackbar.SFCLabel;" oncommand="hackBar.selectionToChar( 'stringFromCharCode' )" />
