@@ -6,6 +6,10 @@
 <!ENTITY hackbar.plusToolLabel "">
 <!ENTITY hackbar.mysql "MySQL">
 <!ENTITY hackbar.mysqlMenuTooltip "MySQL injection tools">
+<!ENTITY hackbar.mssql "MSSQL">
+<!ENTITY hackbar.mssqlMenuTooltip "MSSQL injection tools">
+<!ENTITY hackbar.oracle "Oracle">
+<!ENTITY hackbar.oracleMenuTooltip "Oracle injection tools">
 <!ENTITY hackbar.unionSelectLabel "Union select statement">
 <!ENTITY hackbar.unionSelectTooltip "Union select statement">
 <!ENTITY hackbar.basicInfoLabel "Basic info column">
@@ -49,6 +53,8 @@
 <!ENTITY hackbar.MysqlCharLabel "MySQL CHAR()">
 <!ENTITY hackbar.MssqlCharTooltip "Convert current selection to MsSQL CHAR() characters">
 <!ENTITY hackbar.MssqlCharLabel "MsSQL CHAR()">
+<!ENTITY hackbar.OracleCharTooltip "Convert current selection to Oracle CHR() characters">
+<!ENTITY hackbar.OracleCharLabel "Oracle CHR()">
 <!ENTITY hackbar.rot13Tooltip "ROT13.. encryption">
 <!ENTITY hackbar.rot13Label "ROT13">
 <!ENTITY hackbar.UUETooltip "Base64 Encode selection">
