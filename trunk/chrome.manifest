@@ -1,0 +1,4 @@
+content hackbar chrome/content/
+overlay chrome://browser/content/browser.xul chrome://hackbar/content/hackbar.xul
+locale hackbar en-US chrome/locale/en-US/
+skin hackbar classic/1.0 chrome/skin/
