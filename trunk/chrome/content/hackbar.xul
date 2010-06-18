@@ -128,6 +128,7 @@
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.phi;" label="&hackbar.phi;" oncommand="hackBar.getUsefullString( 'phi' )" />
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.loremIpsum;" label="&hackbar.loremIpsum;" oncommand="hackBar.getUsefullString( 'lorem' )" />
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.fibonacci;" label="&hackbar.fibonacci;" oncommand="hackBar.getUsefullString( 'fibonacci' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.reverseTooltip;" label="&hackbar.reverseLabel;" oncommand="hackBar.reverseString( )" />
                     <!-- Buffer Overflow submenu -->
                     <menu tooltiptext="&hackbar.bufferOverflowTooltip;" label="&hackbar.bufferOverflowLabel;">
                       <menupopup>
