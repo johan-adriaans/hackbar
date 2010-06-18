@@ -47,6 +47,8 @@
 <!ENTITY hackbar.phi "PHI">
 <!ENTITY hackbar.loremIpsum "Lorem Ipsum">
 <!ENTITY hackbar.fibonacci "Fibonacci">
+<!ENTITY hackbar.reverseLabel "Reverse">
+<!ENTITY hackbar.reverseTooltip "Reverse current selecction">
 <!ENTITY hackbar.bufferOverflowTooltip "Generate a large 'A's string to try to generate errors">
 <!ENTITY hackbar.bufferOverflowLabel "Buffer overflow">
 <!ENTITY hackbar.Overflow128 "128">

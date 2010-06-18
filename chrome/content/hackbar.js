@@ -475,7 +475,7 @@ hackBarObj.prototype = {
     
     while(stringLength < 1)
     {
-      stringLength = prompt("Length?","1337");
+      stringLength = prompt("Length of the string to use in the overflow:","1337");
       stringLength = Math.min(4096, parseInt( stringLength ));
     }
     
@@ -484,5 +484,15 @@ hackBarObj.prototype = {
       result += "A";
     }
     this.setSelectedText( result );
+  },
+  
+  // Reverse a string 
+  reverseString: function ( )
+  {
+    var originalString = this.getSelectedText();
+    splitext = originalString.split("");
+    revertext = splitext.reverse();
+    reversed = revertext.join("");
+    this.setSelectedText( reversed );
   }
 };
