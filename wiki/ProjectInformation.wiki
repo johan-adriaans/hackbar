@@ -1,5 +1,5 @@
+#summary Project information
 #labels Featured
-Featured#summary Project information
 
 = Wishlist =
 ----
