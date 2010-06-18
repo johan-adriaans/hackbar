@@ -6,7 +6,7 @@ Featured#summary Project information
   * ~~Add Oracle menu~~ *Done*
   * Add more SQL functionalities
   * Change variables from POST to GET and vice-versa
-  * Reverse a string
+  * ~~Reverse a string~~ *Done*
   * ~~Useful strings -> generate "A"s string of 128, 512, 1024 and 2048 characters~~ *Done*
   * Check icons/css at Linux
 
