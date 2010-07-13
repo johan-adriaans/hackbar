@@ -121,6 +121,7 @@
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/addslashes.png" tooltiptext="&hackbar.addslashesTooltip;" label="&hackbar.addslashesLabel;" oncommand="hackBar.addslashes()" />
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/stripslashes.png" tooltiptext="&hackbar.stripslashesTooltip;" label="&hackbar.stripslashesLabel;" oncommand="hackBar.stripslashes()" />
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/stripspaces.png" tooltiptext="&hackbar.stripspacesTooltip;" label="&hackbar.stripspacesLabel;" oncommand="hackBar.stripspaces()" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.reverseTooltip;" label="&hackbar.reverseLabel;" oncommand="hackBar.reverseString( )" />
                 <menu tooltiptext="&hackbar.usefullStringsMenuTooltip;" label="&hackbar.usefullStringsMenuLabel;">
                   <menupopup>
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.pi;" label="&hackbar.pi;" oncommand="hackBar.getUsefullString( 'pi' )" />
@@ -128,7 +129,6 @@
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.phi;" label="&hackbar.phi;" oncommand="hackBar.getUsefullString( 'phi' )" />
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.loremIpsum;" label="&hackbar.loremIpsum;" oncommand="hackBar.getUsefullString( 'lorem' )" />
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.fibonacci;" label="&hackbar.fibonacci;" oncommand="hackBar.getUsefullString( 'fibonacci' )" />
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.reverseTooltip;" label="&hackbar.reverseLabel;" oncommand="hackBar.reverseString( )" />
                     <!-- Buffer Overflow submenu -->
                     <menu tooltiptext="&hackbar.bufferOverflowTooltip;" label="&hackbar.bufferOverflowLabel;">
                       <menupopup>
