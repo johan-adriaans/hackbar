@@ -9,10 +9,10 @@
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="{F5DDF39C-9293-4d5e-9AA8-E04E6DD5E9B4}"
                    em:name="HackBar"
-                   em:version="1.4.2"
+                   em:version="1.4.5"
                    em:creator="Johan Adriaans"
                    em:description="A toolbar that helps you find and test SQL injections and XSS holes"
-                   em:homepageURL="http://www.izi-services.nl"
+                   em:homepageURL="https://code.google.com/p/hackbar/"
                    em:iconURL="chrome://hackbar/skin/icon.png">
     <em:targetApplication RDF:resource="rdf:#$MlWOk3"/>
   </RDF:Description>
