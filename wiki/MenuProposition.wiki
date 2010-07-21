@@ -1,5 +1,5 @@
 #labels Phase-Design
-*SQL
+* SQL
  * MySQL
   * MySQL version
   * MySQL username
@@ -15,9 +15,17 @@
  * Informix
  * Others SQL servers
  * Generate UNION SELECT statement
-*XSS
+* LDAP
+ * AND Injection
+ * OR Injection
+ * Common CN names
+  * cn=
+  * user=
+* XPath
+ * XPath functions
+* XSS
  * String.fromCharCode()
-*LFI
+* LFI
  * Windows
   * C:\boot.ini
   * C:\Windows\repair\SAM
@@ -26,7 +34,7 @@
   * /etc/passwd
   * /etc/hosts
   * Other common files
-*Encryption
+* Encryption
  * MD5
   * Calculate
   * Send to...
@@ -35,7 +43,7 @@
  * SHA-1
  * SHA-256
  * ROT13
-*Encoding
+* Encoding
  * Binary
   * From binary to ASCII
   * From ASCII to binary
@@ -55,7 +63,7 @@
  * HTML Characters
   * Encode
   * Decode
-*Strings
+* Strings
  * Slashes
   * Add slashes
   * Remove slashes
