@@ -46,6 +46,9 @@
   * From ASCII to hexadecimal
   * From hexadecimal to decimal
   * From decimal to hexadecimal
+ * Base64
+  * Encode
+  * Decode
  * URL
   * Encode
   * Decode
