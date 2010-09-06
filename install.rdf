@@ -1,19 +1,21 @@
-<?xml version="1.0"?>
-<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
-         xmlns:NC="http://home.netscape.com/NC-rdf#"
-         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="rdf:#$MlWOk3"
-                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   em:minVersion="1.5"
-                   em:maxVersion="3.6.*" />
-  <RDF:Description RDF:about="urn:mozilla:install-manifest"
-                   em:id="{F5DDF39C-9293-4d5e-9AA8-E04E6DD5E9B4}"
-                   em:name="HackBar"
-                   em:version="1.4.5"
-                   em:creator="Johan Adriaans"
-                   em:description="A toolbar that helps you find and test SQL injections and XSS holes"
-                   em:homepageURL="https://code.google.com/p/hackbar/"
-                   em:iconURL="chrome://hackbar/skin/icon.png">
-    <em:targetApplication RDF:resource="rdf:#$MlWOk3"/>
-  </RDF:Description>
-</RDF:RDF>
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>F5DDF39C-9293-4d5e-9AA8-E04E6DD5E9B4</em:id>
+    <em:type>2</em:type>
+    <em:name>HackBar</em:name>
+    <em:version>1.5.0</em:version>
+    <em:creator>Johan Adriaans</em:creator>
+    <em:contributor>Pedro Laguna</em:contributor>
+    <em:description>A toolbar that helps pentesters to perform manual web security testing inside their browser.</em:description>
+    <em:homepageURL>https://code.google.com/p/hackbar/</em:homepageURL>
+    <em:iconURL>chrome://hackbar/skin/icon.png</em:iconURL>
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+        <em:minVersion>1.5</em:minVersion>
+        <em:maxVersion>4.0.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>
