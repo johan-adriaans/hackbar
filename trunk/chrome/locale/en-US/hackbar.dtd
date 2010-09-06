@@ -4,6 +4,8 @@
 <!ENTITY hackbar.minusLabel "">
 <!ENTITY hackbar.plusTooltip "Add 1 to current selection">
 <!ENTITY hackbar.plusToolLabel "">
+<!ENTITY hackbar.SQLMenuLabel "SQL">
+<!ENTITY hackbar.SQLMenuTooltip "SQL related shortcuts">
 <!ENTITY hackbar.mysql "MySQL">
 <!ENTITY hackbar.mysqlMenuTooltip "MySQL injection tools">
 <!ENTITY hackbar.mssql "MSSQL">
@@ -56,8 +58,12 @@
 <!ENTITY hackbar.Overflow1024 "1024">
 <!ENTITY hackbar.Overflow2048 "2048">
 <!ENTITY hackbar.OverflowCustom "Custom">
+<!ENTITY hackbar.md5MenuTooltip "MD5 Related functions">
+<!ENTITY hackbar.md5MenuLabel "MD5 Menu">
 <!ENTITY hackbar.md5Tooltip "Convert current selection to its MD5 hash">
 <!ENTITY hackbar.md5Label "MD5 Hash">
+<!ENTITY hackbar.md5SendToTooltip "Send MD5 to an online database">
+<!ENTITY hackbar.md5SendToLabel "Send to...">
 <!ENTITY hackbar.MysqlCharTooltip "Convert current selection to MySQL CHAR() characters">
 <!ENTITY hackbar.MysqlCharLabel "MySQL CHAR()">
 <!ENTITY hackbar.MssqlCharTooltip "Convert current selection to MsSQL CHAR() characters">
