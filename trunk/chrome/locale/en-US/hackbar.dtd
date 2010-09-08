@@ -26,8 +26,6 @@
 <!ENTITY hackbar.htmlCharTooltip "Selection to HTML characters">
 <!ENTITY hackbar.alertXSSLabel "alert(XSS) statement">
 <!ENTITY hackbar.alertXSTooltip "Simple alert statement">
-<!ENTITY hackbar.sha1Label "SHA-1">
-<!ENTITY hackbar.sha1Tooltip "Convert current selection to its SHA-1 hash">
 <!ENTITY hackbar.sha2Label "SHA-256">
 <!ENTITY hackbar.sha2Tooltip "Convert current selection to its SHA-256 hash">
 <!ENTITY hackbar.xssMenuLabel "XSS">
@@ -64,6 +62,16 @@
 <!ENTITY hackbar.md5Label "MD5 Hash">
 <!ENTITY hackbar.md5SendToTooltip "Send MD5 to an online database">
 <!ENTITY hackbar.md5SendToLabel "Send to...">
+<!ENTITY hackbar.md5SendToRednoizeLabel "md5.rednoize.com">
+<!ENTITY hackbar.md5SendToRednoizeTooltip "Send to http://md5.rednoize.com/">
+<!ENTITY hackbar.sha1Label "SHA-1 Hash">
+<!ENTITY hackbar.sha1Tooltip "Convert current selection to its SHA-1 hash">
+<!ENTITY hackbar.sha1MenuLabel "SHA-1 Menu">
+<!ENTITY hackbar.sha1SendToTooltip "Send SHA-1 to an online database">
+<!ENTITY hackbar.sha1MenuTooltip "SHA-1 Related functions">
+<!ENTITY hackbar.sha1SendToLabel "Send to...">
+<!ENTITY hackbar.sha1SendToRednoizeLabel "md5.rednoize.com">
+<!ENTITY hackbar.sha1SendToRednoizeTooltip "Send to http://md5.rednoize.com/">
 <!ENTITY hackbar.MysqlCharTooltip "Convert current selection to MySQL CHAR() characters">
 <!ENTITY hackbar.MysqlCharLabel "MySQL CHAR()">
 <!ENTITY hackbar.MssqlCharTooltip "Convert current selection to MsSQL CHAR() characters">
