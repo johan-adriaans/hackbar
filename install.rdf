@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>F5DDF39C-9293-4d5e-9AA8-E04E6DD5E9B4</em:id>
+    <em:id>{F5DDF39C-9293-4d5e-9AA8-E04E6DD5E9B4}</em:id>
     <em:type>2</em:type>
     <em:name>HackBar</em:name>
-    <em:version>1.5.0</em:version>
+    <em:version>1.5.1</em:version>
     <em:creator>Johan Adriaans</em:creator>
     <em:contributor>Pedro Laguna</em:contributor>
     <em:description>A toolbar that helps pentesters to perform manual web security testing inside their browser.</em:description>
