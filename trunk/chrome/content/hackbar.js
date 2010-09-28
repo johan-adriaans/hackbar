@@ -288,37 +288,40 @@ hackBarObj.prototype = {
     var selection = comboBox.selectedItem.label.toString();
     var txt = this.getSelectedText();
     var originalLength = txt.length;
-    var integer = parseInt(txt);
     var result;
 
     switch ( selection ) {
       case "INT":
+        var integer = parseInt(txt, 10);
         result = integer + add;
         break;
       case "HEX":
+        var integer = parseInt(txt, 16);
         result = hackBarToolbox.dec2hex( hackBarToolbox.hex2dec( txt )  + add );
         break;
       case "OCT":
+        var integer = parseInt(txt, 8);
         result = hackBarToolbox.dec2oct( hackBarToolbox.oct2dec( txt )  + add );
         break;
       case "Alphabet":
+        var integer = parseInt(txt);
         result = hackBarToolbox.dec2alphabet( (hackBarToolbox.alphabet2dec( txt ) + add) % 26 );
         break;
       case "AlNum":
+        var integer = parseInt(txt);
         result = hackBarToolbox.dec2alphanum( (hackBarToolbox.alphanum2dec( txt ) + add) % 36 );
         break;
     }
 
     result = result.toString();
+    var padding = (originalLength - result.length);
+    
     if ( result == "NaN" ) return;
 
-    // Ensure the prepending 0s when increasing numbers
-    if(originalLength > result.length)
+    // Ensure the prepending 0s when increasing/decreasing numbers
+    for(var i = 0; i < padding; i++)
     {
-      for(var i = 0; i <= (originalLength - result.length); i++)
-      {
-        result = "0".concat(result);      
-      }      
+      result = "0".concat(result);
     }
 
     this.setSelectedText( result );
