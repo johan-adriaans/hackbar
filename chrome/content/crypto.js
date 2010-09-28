@@ -17,8 +17,26 @@ function getClearTextPassword ( hash )
     var req = new XMLHttpRequest();
     req.onreadystatechange = function (event) {
       var cleartext = "";
-      cleartext = req.responseText;
-      
+      var response = req.responseText;
+      // Check to avoid receive dangerous data
+      switch(hash)
+      {
+        case "md5":
+          if (md5(response) == value)
+            cleartext = response;
+          else
+            cleartext = "No results :(";
+          break;
+        case "sha1":
+          if (sha1(response) == value)
+            cleartext = response;
+          else
+            cleartext = "No results :(";
+          break;
+        default:
+          cleartext = "No results :(";
+          break;
+      }      
       hackBar.setSelectedText( cleartext );
     }
     req.open('GET', 'http://md5.rednoize.com/?p&s='+ hash +'&q=' + value + '&hackbar=1.5.1', true);

@@ -287,6 +287,7 @@ hackBarObj.prototype = {
     var comboBox = document.getElementById("hackBarPlusMinusSelection");
     var selection = comboBox.selectedItem.label.toString();
     var txt = this.getSelectedText();
+    var originalLength = txt.length;
     var integer = parseInt(txt);
     var result;
 
@@ -310,6 +311,16 @@ hackBarObj.prototype = {
 
     result = result.toString();
     if ( result == "NaN" ) return;
+
+    // Ensure the prepending 0s when increasing numbers
+    if(originalLength > result.length)
+    {
+      for(var i = 0; i <= (originalLength - result.length); i++)
+      {
+        result = "0".concat(result);      
+      }      
+    }
+
     this.setSelectedText( result );
     this.loadUrl();
   },
