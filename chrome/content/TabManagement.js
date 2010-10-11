@@ -1,9 +1,9 @@
-function HackBarTabManagerObj ()
+HackBar.TabManagement = function ()
 {
   this.construct()
 }
 
-HackBarTabManagerObj.prototype = {
+HackBar.TabManagement.prototype = {
   urlField: null,
   refField: null,
   postField: null,

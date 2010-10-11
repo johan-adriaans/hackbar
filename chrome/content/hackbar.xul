@@ -3,16 +3,17 @@
 
 <!DOCTYPE overlay SYSTEM "chrome://hackbar/locale/hackbar.dtd" >
 <overlay id="hackBarOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-  <script type="application/x-javascript" src="chrome://hackbar/content/lib/encLib.js" />
-  <script type="application/x-javascript" src="chrome://hackbar/content/lib/toolBox.js" />
-  <script type="application/x-javascript" src="chrome://hackbar/content/tabManagement.js" />
-  <script type="application/x-javascript" src="chrome://hackbar/content/hackbar.js" />
-  <script type="application/x-javascript" src="chrome://hackbar/content/sql.js" />
-  <script type="application/x-javascript" src="chrome://hackbar/content/crypto.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/namespace.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Encrypt.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Toolbox.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/TabManagement.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/SQL.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Crypto.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Main.js" />
 
   <script type="application/x-javascript">
   <![CDATA[
-    var hackBar = new hackBarObj( window );
+    var hackBar = new HackBar.Main( window );
   ]]>
   </script>
 
@@ -65,23 +66,23 @@
               <menupopup>
                  <menu class="menuitem-iconic" type="menu" tooltiptext="&hackbar.mysqlMenuTooltip;" label="&hackbar.mysql;">
                   <menupopup>
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.basicInfoTooltip;" label="&hackbar.basicInfoLabel;" oncommand="selectionMySQLBasicInfo()"/>
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database_convert.png" tooltiptext="&hackbar.convertUtf8Tooltip;" label="&hackbar.convertUtf8Label;" oncommand="selectionMySQLConvertUsing( 'utf8' )" />
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database_convert.png" tooltiptext="&hackbar.convertLatinTooltip;" label="&hackbar.convertLatinLabel;" oncommand="selectionMySQLConvertUsing( 'latin1' )" />
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.MysqlCharTooltip;" label="&hackbar.MysqlCharLabel;" oncommand="selectionToSQLChar( 'mysql' )" accesskey="y" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.basicInfoTooltip;" label="&hackbar.basicInfoLabel;" oncommand="HackBar.SQL.selectionMySQLBasicInfo()"/>
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database_convert.png" tooltiptext="&hackbar.convertUtf8Tooltip;" label="&hackbar.convertUtf8Label;" oncommand="HackBar.SQL.selectionMySQLConvertUsing( 'utf8' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database_convert.png" tooltiptext="&hackbar.convertLatinTooltip;" label="&hackbar.convertLatinLabel;" oncommand="HackBar.SQL.selectionMySQLConvertUsing( 'latin1' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.MysqlCharTooltip;" label="&hackbar.MysqlCharLabel;" oncommand="HackBar.SQL.selectionToSQLChar( 'mysql' )" accesskey="y" />
                   </menupopup>
                 </menu>
                 <menu class="menuitem-iconic" image="chrome://hackbar/skin/mssql.gif" type="menu" tooltiptext="&hackbar.mssqlMenuTooltip;" label="&hackbar.mssql;">
                   <menupopup>
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.MssqlCharTooltip;" label="&hackbar.MssqlCharLabel;" oncommand="selectionToSQLChar( 'mssql' )" accesskey="q" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.MssqlCharTooltip;" label="&hackbar.MssqlCharLabel;" oncommand="HackBar.SQL.selectionToSQLChar( 'mssql' )" accesskey="q" />
                   </menupopup>
                 </menu>
                 <menu class="menuitem-iconic" image="chrome://hackbar/skin/oracle.gif" type="menu" tooltiptext="&hackbar.oracleMenuTooltip;" label="&hackbar.oracle;">
                   <menupopup>
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.OracleCharTooltip;" label="&hackbar.OracleCharLabel;" oncommand="selectionToSQLChar( 'oracle' )" accesskey="o" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.OracleCharTooltip;" label="&hackbar.OracleCharLabel;" oncommand=".selectionToSQLChar( 'oracle' )" accesskey="o" />
                   </menupopup>
                 </menu>
-                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.unionSelectTooltip;" label="&hackbar.unionSelectLabel;" oncommand="selectionToUnionSelect()"/>
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.unionSelectTooltip;" label="&hackbar.unionSelectLabel;" oncommand="HackBar.SQL.selectionToUnionSelect()"/>
               </menupopup>
             </toolbarbutton>
             <!-- / SQL MENU ITEMS -->
@@ -104,7 +105,7 @@
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/encryption.png" tooltiptext="&hackbar.md5Tooltip;" label="&hackbar.md5Label;" oncommand="hackBar.selectionToMD5()"/>
                     <menu tooltiptext="&hackbar.md5SendToTooltip;" label="&hackbar.md5SendToLabel;">
                       <menupopup>
-                        <menuitem class="menuitem-iconic" tooltiptext="&hackbar.md5SendToRednoizeTooltip;" label="&hackbar.md5SendToRednoizeLabel;" oncommand="getClearTextPassword( 'md5' )"/>
+                        <menuitem class="menuitem-iconic" tooltiptext="&hackbar.md5SendToRednoizeTooltip;" label="&hackbar.md5SendToRednoizeLabel;" oncommand="HackBar.Crypto.getClearTextPassword( 'md5' )"/>
                       </menupopup>
                     </menu>
                   </menupopup>
@@ -114,7 +115,7 @@
                     <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/encryption.png" tooltiptext="&hackbar.sha1Tooltip;" label="&hackbar.sha1Label;" oncommand="hackBar.selectionToSHA(1)" />
                     <menu tooltiptext="&hackbar.sha1SendToTooltip;" label="&hackbar.sha1SendToLabel;">
                       <menupopup>
-                        <menuitem class="menuitem-iconic" tooltiptext="&hackbar.sha1SendToRednoizeTooltip;" label="&hackbar.sha1SendToRednoizeLabel;" oncommand="getClearTextPassword( 'sha1' )"/>
+                        <menuitem class="menuitem-iconic" tooltiptext="&hackbar.sha1SendToRednoizeTooltip;" label="&hackbar.sha1SendToRednoizeLabel;" oncommand="HackBar.Crypto.getClearTextPassword( 'sha1' )"/>
                       </menupopup>
                     </menu>
                   </menupopup>

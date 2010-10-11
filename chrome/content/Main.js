@@ -1,9 +1,9 @@
-function hackBarObj ( myWindow )
+HackBar.Main = function ( myWindow )
 {
   this.construct( myWindow );
 }
 
-hackBarObj.prototype = {
+HackBar.Main.prototype = {
 
   field             : null,
   postDataField     : null,
@@ -67,7 +67,7 @@ hackBarObj.prototype = {
     this.toolbar       = document.getElementById("hackBarToolbar");
 
     var me = this;
-    anonFocusFunct = function ( event ) { me.onFieldFocus( event ); }
+    var anonFocusFunct = function ( event ) { me.onFieldFocus( event ); }
     this.urlField.addEventListener(      'focus', anonFocusFunct, false );
     this.postDataField.addEventListener( 'focus', anonFocusFunct, false );
     this.referrerField.addEventListener( 'focus', anonFocusFunct, false );
@@ -82,7 +82,7 @@ hackBarObj.prototype = {
 
   initTabManager: function ()
   {
-    this.tabManager = new HackBarTabManagerObj();
+    this.tabManager = new HackBar.TabManagement();
   },
 
   destruct: function ()
@@ -297,19 +297,19 @@ hackBarObj.prototype = {
         break;
       case "HEX":
         var integer = parseInt(txt, 16);
-        result = hackBarToolbox.dec2hex( hackBarToolbox.hex2dec( txt )  + add );
+        result = HackBar.Toolbox.dec2hex( HackBar.Toolbox.hex2dec( txt )  + add );
         break;
       case "OCT":
         var integer = parseInt(txt, 8);
-        result = hackBarToolbox.dec2oct( hackBarToolbox.oct2dec( txt )  + add );
+        result = HackBar.Toolbox.dec2oct( HackBar.Toolbox.oct2dec( txt )  + add );
         break;
       case "Alphabet":
         var integer = parseInt(txt);
-        result = hackBarToolbox.dec2alphabet( (hackBarToolbox.alphabet2dec( txt ) + add) % 26 );
+        result = HackBar.Toolbox.dec2alphabet( (HackBar.Toolbox.alphabet2dec( txt ) + add) % 26 );
         break;
       case "AlNum":
         var integer = parseInt(txt);
-        result = hackBarToolbox.dec2alphanum( (hackBarToolbox.alphanum2dec( txt ) + add) % 36 );
+        result = HackBar.Toolbox.dec2alphanum( (HackBar.Toolbox.alphanum2dec( txt ) + add) % 36 );
         break;
     }
 
@@ -331,7 +331,7 @@ hackBarObj.prototype = {
   selectionToMD5: function ()
   {
     var txt = this.getSelectedText();
-    var md5_str = md5(txt);
+    var md5_str = HackBar.Encrypt.md5(txt);
     this.setSelectedText( md5_str );
   },
 
@@ -363,7 +363,7 @@ hackBarObj.prototype = {
   selectionToSHA: function ( sha_type )
   {
     var txt = this.getSelectedText();
-    var sha_str = (sha_type == 1) ? sha1(txt) : sha2(txt);;
+    var sha_str = (sha_type == 1) ? HackBar.Encrypt.sha1(txt) : HackBar.Encrypt.sha2(txt);;
     this.setSelectedText( sha_str );
   },
 
@@ -382,14 +382,14 @@ hackBarObj.prototype = {
   selectionToBase64: function ( encodeOrDecode )
   {
     var txt = this.getSelectedText();
-    var newString = ( encodeOrDecode == 'encode' ) ? base64Encode(txt) : base64Decode(txt);
+    var newString = ( encodeOrDecode == 'encode' ) ? HackBar.Encrypt.base64Encode(txt) : HackBar.Encrypt.base64Decode(txt);
     this.setSelectedText( newString );
   },
 
   selectionToRot13: function ()
   {
     var txt = this.getSelectedText();
-    this.setSelectedText( rot13( txt ) );
+    this.setSelectedText( HackBar.Encrypt.rot13( txt ) );
   },
 
   hexEncoding: function ( separator )
@@ -399,7 +399,7 @@ hackBarObj.prototype = {
     var decimal;
     for ( var c = 0 ; c < txt.length ; c++ ) {
       decimal = txt.charCodeAt( c );
-      charStringArray.push( hackBarToolbox.dec2hex( decimal ) );
+      charStringArray.push( HackBar.Toolbox.dec2hex( decimal ) );
     }
     this.setSelectedText( charStringArray.join( separator ) );
   },
@@ -415,7 +415,7 @@ hackBarObj.prototype = {
     for ( var c = 0 ; c < txt.length ; c++ ) {
       buffer += txt.charAt( c ).toString();
       if ( buffer.length >= 2 ) {
-        result += String.fromCharCode( hackBarToolbox.hex2dec( buffer ) );
+        result += String.fromCharCode( HackBar.Toolbox.hex2dec( buffer ) );
         buffer = '';
       }
     }
@@ -425,13 +425,13 @@ hackBarObj.prototype = {
   NumberToHex: function ()
   {
     var number = parseInt(this.getSelectedText());
-    this.setSelectedText( hackBarToolbox.dec2hex( number ) );
+    this.setSelectedText( HackBar.Toolbox.dec2hex( number ) );
   },
 
   HexToNumber: function ()
   {
     var hex = this.getSelectedText();
-    this.setSelectedText( hackBarToolbox.hex2dec( hex ) );
+    this.setSelectedText( HackBar.Toolbox.hex2dec( hex ) );
   },
 
   adjustFieldSize: function ( add, fieldId )
@@ -471,9 +471,9 @@ hackBarObj.prototype = {
   reverseString: function ( )
   {
     var originalString = this.getSelectedText();
-    splitext = originalString.split("");
-    revertext = splitext.reverse();
-    reversed = revertext.join("");
+    var splitext = originalString.split("");
+    var revertext = splitext.reverse();
+    var reversed = revertext.join("");
     this.setSelectedText( reversed );
   }
 };
