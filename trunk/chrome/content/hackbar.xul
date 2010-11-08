@@ -7,8 +7,8 @@
   <script type="application/x-javascript" src="chrome://hackbar/content/Encrypt.js" />
   <script type="application/x-javascript" src="chrome://hackbar/content/Toolbox.js" />
   <script type="application/x-javascript" src="chrome://hackbar/content/TabManagement.js" />
-  <script type="application/x-javascript" src="chrome://hackbar/content/SQL.js" />
   <script type="application/x-javascript" src="chrome://hackbar/content/Crypto.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/SQL.js" />
   <script type="application/x-javascript" src="chrome://hackbar/content/Main.js" />
 
   <script type="application/x-javascript">
@@ -79,10 +79,11 @@
                 </menu>
                 <menu class="menuitem-iconic" image="chrome://hackbar/skin/oracle.gif" type="menu" tooltiptext="&hackbar.oracleMenuTooltip;" label="&hackbar.oracle;">
                   <menupopup>
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.OracleCharTooltip;" label="&hackbar.OracleCharLabel;" oncommand=".selectionToSQLChar( 'oracle' )" accesskey="o" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.OracleCharTooltip;" label="&hackbar.OracleCharLabel;" oncommand="HackBar.SQL.selectionToSQLChar( 'oracle' )" accesskey="o" />
                   </menupopup>
                 </menu>
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.unionSelectTooltip;" label="&hackbar.unionSelectLabel;" oncommand="HackBar.SQL.selectionToUnionSelect()"/>
+				<menuitem class="menuitem-iconic" image="chrome://hackbar/skin/database.png" tooltiptext="&hackbar.spacesToCommentsTooltip;" label="&hackbar.spacesToCommentsLabel;" oncommand="HackBar.SQL.selectionToInlineComments()"/>
               </menupopup>
             </toolbarbutton>
             <!-- / SQL MENU ITEMS -->
