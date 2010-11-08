@@ -14,6 +14,8 @@
 <!ENTITY hackbar.oracleMenuTooltip "Oracle injection tools">
 <!ENTITY hackbar.unionSelectLabel "Union select statement">
 <!ENTITY hackbar.unionSelectTooltip "Union select statement">
+<!ENTITY hackbar.spacesToCommentsLabel "Spaces to inline comments">
+<!ENTITY hackbar.spacesToCommentsTooltip "Convert spaces to inline comments">
 <!ENTITY hackbar.basicInfoLabel "Basic info column">
 <!ENTITY hackbar.basicInfoTooltip "Show basic database information, use this on a union select column with output">
 <!ENTITY hackbar.convertUtf8Label "Convert using UTF-8">

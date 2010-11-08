@@ -2,7 +2,7 @@ HackBar.SQL = {
 
   selectionToSQLChar: function ( dbEngine )
   {
-    var charStringArray = new Array;
+    var charStringArray = new Array();
     var txt = hackBar.getSelectedText();
     var decimal;
     for ( var c = 0 ; c < txt.length ; c++ ) {
@@ -36,6 +36,13 @@ HackBar.SQL = {
       colArray.push( i+1 );
     }
     var txt = "UNION SELECT " + colArray.join( ',' );
+    hackBar.setSelectedText( txt );
+  },
+  
+  selectionToInlineComments: function ()
+  {
+	var txt = hackBar.getSelectedText();
+    txt = txt.replace(/ /g, "/**/");
     hackBar.setSelectedText( txt );
   },
   /* GENERAL FUNCTIONS */
