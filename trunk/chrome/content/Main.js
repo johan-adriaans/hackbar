@@ -152,6 +152,7 @@ HackBar.Main.prototype = {
     var dataString = this.postDataField.value;
     if ( !document.getElementById('hackBar_postDataCheckBox').checked || !dataString ) return null;
     dataString = dataString.replace( new RegExp(/\n|\r/g), '' );
+	dataString = dataString.replace( new RegExp(/\+/g), "%2B" );
 
     const Cc = Components.classes;
     const Ci = Components.interfaces;

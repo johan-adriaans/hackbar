@@ -2,6 +2,7 @@
 <?xml-stylesheet href="chrome://hackbar/skin/hackbar.css" type="text/css"?>
 
 <!DOCTYPE overlay SYSTEM "chrome://hackbar/locale/hackbar.dtd" >
+
 <overlay id="hackBarOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script type="application/x-javascript" src="chrome://hackbar/content/namespace.js" />
   <script type="application/x-javascript" src="chrome://hackbar/content/Encrypt.js" />
@@ -9,6 +10,8 @@
   <script type="application/x-javascript" src="chrome://hackbar/content/TabManagement.js" />
   <script type="application/x-javascript" src="chrome://hackbar/content/Crypto.js" />
   <script type="application/x-javascript" src="chrome://hackbar/content/SQL.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/GUI.js" />
+  <script type="application/x-javascript" src="chrome://hackbar/content/Strings.js" />
   <script type="application/x-javascript" src="chrome://hackbar/content/Main.js" />
 
   <script type="application/x-javascript">
@@ -62,7 +65,7 @@
             <!-- / INCREMENT / DECREMENT MENU -->
             
             <!-- SQL MENU ITEMS -->
-            <toolbarbutton class="menuitem-iconic" type="menu" tooltiptext="&hackbar.SQLMenuTooltip;" label="&hackbar.SQLMenuLabel;">
+            <toolbarbutton class="menuitem-iconic" type="menu" tooltiptext="&hackbar.SQLMenuTooltip;" label="&hackbar.SQLMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
               <menupopup>
                  <menu class="menuitem-iconic" type="menu" tooltiptext="&hackbar.mysqlMenuTooltip;" label="&hackbar.mysql;">
                   <menupopup>
@@ -89,17 +92,17 @@
             <!-- / SQL MENU ITEMS -->
             
             <!-- XSS MENU ITEMS -->
-            <toolbarbutton type="menu" tooltiptext="&hackbar.xssMenuTooltip;" label="&hackbar.xssMenuLabel;">
+            <toolbarbutton type="menu" tooltiptext="&hackbar.xssMenuTooltip;" label="&hackbar.xssMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
               <menupopup>
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/xss.png" tooltiptext="&hackbar.SFCTooltip;" label="&hackbar.SFCLabel;" oncommand="hackBar.selectionToChar( 'stringFromCharCode' )" />
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/xss.png" tooltiptext="&hackbar.htmlCharTooltip;" label="&hackbar.htmlCharLabel;" oncommand="hackBar.selectionToChar( 'htmlChar' )" />
-                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/xss_alert.png" tooltiptext="&hackbar.alertXSTooltip;" label="&hackbar.alertXSSLabel;" oncommand="hackBar.getUsefullString( 'alert' )" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/xss_alert.png" tooltiptext="&hackbar.alertXSTooltip;" label="&hackbar.alertXSSLabel;" oncommand="HackBar.Strings.getUsefullString( 'alert' )" />
               </menupopup>
             </toolbarbutton>
             <!-- / XSS MENU ITEMS -->
             
             <!-- ENCRYPTION MENU ITEMS -->
-            <toolbarbutton type="menu" tooltiptext="&hackbar.encMenuTooltip;" label="&hackbar.encMenuLabel;">
+            <toolbarbutton type="menu" tooltiptext="&hackbar.encMenuTooltip;" label="&hackbar.encMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
               <menupopup>
                 <menu tooltiptext="&hackbar.md5MenuTooltip;" label="&hackbar.md5MenuLabel;">
                   <menupopup>
@@ -128,7 +131,7 @@
             <!-- / ENCRYPTION MENU ITEMS -->
             
             <!-- ENCODING MENU ITEMS -->
-            <toolbarbutton type="menu" tooltiptext="&hackbar.encdecMenuTooltip;" label="&hackbar.encdecMenuLabel;">
+            <toolbarbutton type="menu" tooltiptext="&hackbar.encdecMenuTooltip;" label="&hackbar.encdecMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
               <menupopup>
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/uue.png" tooltiptext="&hackbar.UUETooltip;" label="&hackbar.UUELabel;" oncommand="hackBar.selectionToBase64( 'encode' )" />
                 <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/uud.png" tooltiptext="&hackbar.UUDTooltip;" label="&hackbar.UUDLabel;" oncommand="hackBar.selectionToBase64( 'decode' )" />
@@ -150,27 +153,30 @@
                 </menu>
               </menupopup>
             </toolbarbutton>
-            <toolbarbutton id="hackBarStringButton" type="menu" tooltiptext="&hackbar.miscMenuTooltip;" label="&hackbar.miscMenuLabel;">
+			<!-- / ENCODING MENU ITEMS -->
+			
+			<!-- MISC MENU ITEMS -->
+            <toolbarbutton id="hackBarStringButton" type="menu" tooltiptext="&hackbar.miscMenuTooltip;" label="&hackbar.miscMenuLabel;" onmouseover="HackBar.GUI.openToolbarButton(this)">
               <menupopup>
-                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/addslashes.png" tooltiptext="&hackbar.addslashesTooltip;" label="&hackbar.addslashesLabel;" oncommand="hackBar.addslashes()" />
-                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/stripslashes.png" tooltiptext="&hackbar.stripslashesTooltip;" label="&hackbar.stripslashesLabel;" oncommand="hackBar.stripslashes()" />
-                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/stripspaces.png" tooltiptext="&hackbar.stripspacesTooltip;" label="&hackbar.stripspacesLabel;" oncommand="hackBar.stripspaces()" />
-                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.reverseTooltip;" label="&hackbar.reverseLabel;" oncommand="hackBar.reverseString( )" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/addslashes.png" tooltiptext="&hackbar.addslashesTooltip;" label="&hackbar.addslashesLabel;" oncommand="HackBar.Strings.addslashes()" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/stripslashes.png" tooltiptext="&hackbar.stripslashesTooltip;" label="&hackbar.stripslashesLabel;" oncommand="HackBar.Strings.stripslashes()" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/stripspaces.png" tooltiptext="&hackbar.stripspacesTooltip;" label="&hackbar.stripspacesLabel;" oncommand="HackBar.Strings.stripspaces()" />
+                <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.reverseTooltip;" label="&hackbar.reverseLabel;" oncommand="HackBar.Strings.reverseString( )" />
                 <menu tooltiptext="&hackbar.usefullStringsMenuTooltip;" label="&hackbar.usefullStringsMenuLabel;">
                   <menupopup>
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.pi;" label="&hackbar.pi;" oncommand="hackBar.getUsefullString( 'pi' )" />
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.piBig;" label="&hackbar.piBig;" oncommand="hackBar.getUsefullString( 'piBig' )" />
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.phi;" label="&hackbar.phi;" oncommand="hackBar.getUsefullString( 'phi' )" />
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.loremIpsum;" label="&hackbar.loremIpsum;" oncommand="hackBar.getUsefullString( 'lorem' )" />
-                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.fibonacci;" label="&hackbar.fibonacci;" oncommand="hackBar.getUsefullString( 'fibonacci' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.pi;" label="&hackbar.pi;" oncommand="HackBar.Strings.getUsefullString( 'pi' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.piBig;" label="&hackbar.piBig;" oncommand="HackBar.Strings.getUsefullString( 'piBig' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.phi;" label="&hackbar.phi;" oncommand="HackBar.Strings.getUsefullString( 'phi' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.loremIpsum;" label="&hackbar.loremIpsum;" oncommand="HackBar.Strings.getUsefullString( 'lorem' )" />
+                    <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.fibonacci;" label="&hackbar.fibonacci;" oncommand="HackBar.Strings.getUsefullString( 'fibonacci' )" />
                     <!-- Buffer Overflow submenu -->
                     <menu tooltiptext="&hackbar.bufferOverflowTooltip;" label="&hackbar.bufferOverflowLabel;">
                       <menupopup>
-                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow128;" label="&hackbar.Overflow128;" oncommand="hackBar.generateOverflowString( 128 )" />
-                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow512;" label="&hackbar.Overflow512;" oncommand="hackBar.generateOverflowString( 512 )" />
-                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow1024;" label="&hackbar.Overflow1024;" oncommand="hackBar.generateOverflowString( 1024 )" />
-                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow2048;" label="&hackbar.Overflow2048;" oncommand="hackBar.generateOverflowString( 2048 )" />
-                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.OverflowCustom;" label="&hackbar.OverflowCustom;" oncommand="hackBar.generateOverflowString( -1 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow128;" label="&hackbar.Overflow128;" oncommand="HackBar.Strings.generateOverflowString( 128 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow512;" label="&hackbar.Overflow512;" oncommand="HackBar.Strings.generateOverflowString( 512 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow1024;" label="&hackbar.Overflow1024;" oncommand="HackBar.Strings.generateOverflowString( 1024 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.Overflow2048;" label="&hackbar.Overflow2048;" oncommand="HackBar.Strings.generateOverflowString( 2048 )" />
+                        <menuitem class="menuitem-iconic" image="chrome://hackbar/skin/string.png" tooltiptext="&hackbar.OverflowCustom;" label="&hackbar.OverflowCustom;" oncommand="HackBar.Strings.generateOverflowString( -1 )" />
                       </menupopup>
                     </menu>
                     <!-- / Buffer Overflow submenu -->
@@ -178,7 +184,7 @@
                 </menu>
               </menupopup>
             </toolbarbutton>
-            <!-- / ENCODING MENU ITEMS -->
+            <!-- / MISC MENU ITEMS -->
           </hbox>
         </toolbaritem>
         <toolbaritem>
