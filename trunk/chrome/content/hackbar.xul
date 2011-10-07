@@ -23,7 +23,7 @@
   <toolbarpalette id="BrowserToolbarPalette">
     <toolbarbutton id="hackBarToolbarButton"/>
   </toolbarpalette>
-  <toolbarbutton id="hackBarToolbarButton" label="Toggle HackBar" tooltiptext="&hackbar.toolsMenuShowHide;" oncommand="hackBar.toggleBar()" class="hackBarToolbarButton chromeclass-toolbar-additional custombutton" />
+  <toolbarbutton id="hackBarToolbarButton" label="Toggle HackBar" tooltiptext="&hackbar.toolsMenuShowHide;" oncommand="hackBar.toggleBar()" class="toolbarbutton-1 hackBarToolbarButton chromeclass-toolbar-additional custombutton" />
 
   <commandset id="mainCommandSet">
     <command id="cmd_toggleHackBar" oncommand="hackBar.toggleBar()"/>
