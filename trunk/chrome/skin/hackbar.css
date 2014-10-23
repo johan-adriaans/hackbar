@@ -2,6 +2,9 @@
 
 menu#firstMenuItem { margin-left: 88px; }
 
+/* Fixed bug https://bugzilla.mozilla.org/show_bug.cgi?id=1037303 */
+toolbar#hackBarToolbar { max-height: 1000px !important; }
+
 textbox#hackBarTargetUrl,
 textbox#hackBarTargetUrlPostField,
 textbox#hackBarTargetUrlReferrerField { font-family: monospace, courier; font-size: 12px; }
